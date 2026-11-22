@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Entitas utama OtoPartID: satu baris = satu penawaran sparepart di satu toko
+model Sparepart {
+  id        Int      @id @default(autoincrement())
+  nama      String
+  merek     String
+  kategori  String
+  kendaraan String // kompatibilitas, contoh: "Honda Beat 2020"
+  harga     Int // rupiah
+  toko      String
+  stok      Int      @default(0)
+  deskripsi String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("spareparts")
+}
