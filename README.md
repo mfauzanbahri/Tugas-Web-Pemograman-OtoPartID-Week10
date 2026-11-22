@@ -57,8 +57,7 @@ src/prisma/        PrismaService + PrismaModule (global)
 src/sparepart/     controller, service, dto
 ```
 
-## Screenshot
-Lihat folder `docs/screenshots/`:
+## Tampilan List
 1. Tabel `spareparts` terbentuk setelah migrasi
 2. Hasil CRUD (POST, GET, PATCH, DELETE)
 3. Data tetap ada setelah server di-restart
